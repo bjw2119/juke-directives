@@ -31,10 +31,12 @@ juke.directive('song', function(PlayerFactory){
   return {
     restrict: 'A',
     scope: {
-
+      click: '&doubleClick'
     },
     link: function(scope, element, attr){
-
+      element.on('dblclick',function(){
+        scope.click();
+      })
     }
   }
 })
